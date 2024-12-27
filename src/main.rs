@@ -13,6 +13,7 @@ pub mod ui {
 
 mod components {
     pub mod logo;
+    pub mod side_bar;
 }
 
 use dioxus::prelude::*;
@@ -44,10 +45,13 @@ fn main() {
 }
 
 fn App() -> Element {
-    let tailwind_css = include_str!("../public/output.css");
+    // let tailwind_css = include_str!("../public/output.css");
     // TODO: add the modal and toast provider here
     rsx! {
-        style { "{tailwind_css}" }
+        //style { "{tailwind_css}" }
+        document::Stylesheet {
+            href: asset!("/public/output.css")
+        }
         Router::<Route> {}
     }
 }

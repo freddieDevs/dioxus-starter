@@ -22,7 +22,7 @@ pub fn Avatar(class: Option<&'static str>, children: Element) -> Element {
 
 //avatar_image component
 #[component] 
-pub fn AvatarImage(src: &'static str, alt: &'static str, class: Option<&'static str>) -> Element {
+pub fn AvatarImage(src: Asset, alt: &'static str, class: Option<&'static str>) -> Element {
   rsx! {
     img {
       src: "{src}",
